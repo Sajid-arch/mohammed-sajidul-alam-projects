@@ -1,0 +1,487 @@
+/*Basic Style Start */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+    html, body {
+    overflow-x: clip;
+    position: relative;
+}
+
+body {
+    font-family: "Rajdhani", sans-serif!important;
+
+}
+
+
+/* The line Effect Code Start */
+
+
+.the-line{
+   color: var(--header-font-clr);
+   position: relative;
+   transition: ease-in 0.15s, ease-out 0.25s; 
+}
+
+.the-line:hover{
+    color: var(--btn-bg-clr);
+}
+
+.the-line::after{
+    content:"";
+    position: absolute;
+    right:0;
+    bottom:0;
+    width: 0;
+    height: 2px;
+    background-color: var(--btn-bg-clr);
+    transition: ease-in 0.15s, ease-out 0.25s;
+}
+
+.the-line:hover::after{
+    width: 100%;
+    left:0;
+}
+
+
+/* The line Effect Code End */
+
+/* The Grow Effect Code Start  */
+
+.grow{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--transparent);
+    margin-right: 0.5em;
+    transition: all ease 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.grow-i{
+    color: var(--header-font-clr);
+    font-size: 1rem;
+    z-index: 3;
+}
+.grow::after{
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--btn-bg-clr);
+    transition: all ease 0.5s;
+    transform: scale(0);
+}
+.grow:hover::after{
+    transform: scale(1);
+}
+.grow:hover .grow-i{
+    color: var(--text-clr);
+}
+
+
+
+
+
+
+div.loader-container{
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+
+  .loader {
+    position: relative;
+    width: calc(var(--loader-size) * 0.51);
+    height: calc(var(--loader-size) * 0.51);
+  }
+
+  .dot {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    transform-origin: center top;
+  }
+
+  .dot::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 25%;
+    border-radius: 50%;
+    background-color: var(--btn-bg-clr);
+    transition: background-color 0.3s ease;
+  }
+
+  .dot:first-child {
+    animation: swing var(--loader-speed) linear infinite;
+  }
+
+  .dot:last-child {
+    animation: swing2 var(--loader-speed) linear infinite;
+  }
+
+  @keyframes swing {
+    0% {
+      transform: rotate(0deg);
+      animation-timing-function: ease-out;
+    }
+
+    25% {
+      transform: rotate(70deg);
+      animation-timing-function: ease-in;
+    }
+
+    50% {
+      transform: rotate(0deg);
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes swing2 {
+    0% {
+      transform: rotate(0deg);
+      animation-timing-function: linear;
+    }
+
+    50% {
+      transform: rotate(0deg);
+      animation-timing-function: ease-out;
+    }
+
+    75% {
+      transform: rotate(-70deg);
+      animation-timing-function: ease-in;
+    }
+  }
+
+
+/* The Grow Effect Code End  */
+
+
+
+
+:root {
+    --header-font-clr: rgba(20,20,20);
+    --text-clr: #ffffff;
+    --btn-bg-clr: rgba(255, 0, 0);
+    --btn-bg-light-clr: rgba(255, 0, 0, 0.1);
+    --hero-bg-clr: rgba(43, 16, 22);
+    --about-bg-clr:rgb(67, 20, 23);
+    --box-shadow-clr: rgba(0, 0, 0, 0.5);
+    --heading-clr:rgba(237, 228, 228, 1);
+    --gradient-text: linear-gradient(60deg,rgba(237, 35, 81),rgba(203, 199, 199));
+    --placeholder-text-clr:rgba(117, 117, 118);
+    --transparent:#e7e7e7;
+    --description-clr:#5d6570;
+    --invisible: rgba(0,0,0,0);
+    --transparent-bg-clr:rgba(0,0,0,0.05);
+    --content-bg:#F2F2F2;
+    --progressbar-bg:#f4f4f4;
+    --heading-section-clr:#ededed;
+    --con-det-i-bg-clr:rgba(255, 73, 74, 0.2);
+    --border: #d9dde0;
+    --label-border: 2px;
+    --loader-size: 78px;
+    --loader-speed: 1.4s;
+}
+
+
+/* Basic Style End */
+
+
+
+/* Heading Section Style Start */
+
+
+section.heading {
+    background: var(--heading-section-clr);
+    
+}
+
+
+    section.heading h2{
+        font-weight: 700;
+        color: var(--header-font-clr);
+    }
+
+    div.heading-links a{
+        font-size: 1rem;
+        color: var(--description-clr);
+    }
+    div.heading-links i{
+        font-size: 1rem;
+        color: var(--description-clr);
+    }
+    div.heading-links a.the-link{
+        font-size: 1rem;
+        color: var(--btn-bg-clr);
+    }
+    div.heading-links a:hover{
+        color: var(--btn-bg-clr);
+    }
+
+
+
+
+
+    .btn-1{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;   
+    font-weight: 500;
+    background: transparent;
+    color: var(--text-clr);
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+    }
+
+    .btn-1::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--btn-bg-clr);
+    z-index: -1;
+    border-radius:50px;
+    transition: all ease 0.5s;
+    }
+    .btn-1::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 100%;
+    background: var(--text-clr);
+    z-index: -1;
+    border-radius:50px;
+    transition: all ease 0.5s;    
+    }
+
+    .btn-1:hover{
+    color: var(--btn-bg-clr);
+    transform: translateX(10px);
+    box-shadow: 0 0 20px var(--box-shadow-clr);
+    }
+    .btn-1:hover::before{
+    left: 100%;
+    }
+    .btn-1:hover::after{
+    right: 0;
+    }
+
+
+
+
+
+/* Heading Section Style End */
+
+
+ .text-appear{
+    animation: text-appear both;
+    animation-timeline: view();
+    animation-range: entry 40% cover 50%;
+ }
+
+@keyframes text-appear{
+    from{
+        opacity:0;
+        transform: translateY(100px) scale(0.8);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+ 
+
+
+
+
+   /* My Latest Projects Style Start  */
+
+   section.lp{
+    padding: 4rem 0;
+   }
+
+   section.lp div.container h3.pb-2{
+    color: var(--btn-bg-clr);
+   }
+   
+   section.lp div.container h2.lp-heading{
+    font-weight: 600;
+    color: var(--header-font-clr);
+   }
+
+   section.lp div.container p{
+    color: var(--description-clr);
+   }
+
+   section.lp div.container div.row div.col-12 div.p-img-wrapper{
+    border: 2px solid var(--border);
+    background: var(--progressbar-bg);
+   }
+
+   section.lp div.container div.row div.col-12 div.p-img{
+    overflow: hidden;
+    transition: all ease 0.5s;
+   }
+
+   section.lp div.container div.row div.col-12 div.p-img img{
+    transition: all ease 0.5s;
+   }
+
+
+   section.lp div.container div.row div.col-12 div.p-img:hover img{
+    transform: scale(1.05);
+   }
+
+
+
+
+   /* My Latest Projects Style End  */
+  
+
+  
+
+   /* Contact Section Style Start  */
+
+
+   section.contact-sec{
+    padding: 4rem 0 6rem;
+
+   }
+
+
+   div.contact{
+    background-color: var(--content-bg);
+    height: 100%;
+    position: relative;
+   }
+
+   div.contact:hover::after{
+    opacity: 1;
+}
+div.contact:hover::before{
+    opacity: 0;
+}
+
+div.contact::before, 
+div.contact::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    transition: opacity 0.5s;
+
+
+}    
+
+
+div.contact > div.contact-content{
+    height: calc(100% - 6px);
+    width: calc(100% - 6px);
+    background: var(--progressbar-bg);
+    margin: 3px 3px 3px 3.5px;
+    z-index: 2;
+    position: relative;
+    padding: 2rem;
+}
+
+div.contact::after{
+    background: radial-gradient(1800px circle at var(--mouse-x) var(--mouse-y) , var(--btn-bg-clr), transparent 40%);
+    z-index: 1;
+    opacity: 0;
+}
+
+
+div.contact-text h6{
+    letter-spacing: 1px;
+    font-size: 1rem;
+    color: var(--btn-bg-clr);
+    font-weight: 500;
+}
+div.contact-text h3{
+    font-size: 3rem;
+    color: var(--header-font-clr);
+    font-weight: 700;
+}
+div.contact-text p{
+    font-size: 1rem;
+    color: var(--description-clr);
+    font-weight: 400;
+}
+
+
+
+div.contact-form form textarea{
+    resize: none;
+}
+
+
+
+div.contact-form form input,textarea{
+    background: var(--invisible);
+    border: 2px solid var(--border);
+    transition: all ease 0.5s;
+    font-size: 1rem;
+    color: var(--header-font-clr);
+}
+
+div.contact-form form input::placeholder, div.contact-form form textarea::placeholder{
+    color: var(--header-font-clr);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+div.contact-form form input:focus, div.contact-form form textarea:focus{
+    border: 2px solid var(--btn-bg-clr);
+}
+
+
+
+
+   /* Contact Section Style End  */
+
+
+  
+
+
