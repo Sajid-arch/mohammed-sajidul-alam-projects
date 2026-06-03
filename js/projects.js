@@ -174,7 +174,9 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
 
     // Get values from the input fields
     const name = document.getElementById('name').value;
+    const number = document.getElementById('number').value;
     const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
     const message = document.getElementById('message').value;
 
     try {
@@ -182,7 +184,7 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
         const { data, error } = await supabase
             .from('contact_submissions')
             .insert([
-                { name: name, email: email, message: message }
+                { name: name, number: number, email: email, subject: subject, message: message }
             ]);
 
         if (error) throw error;
