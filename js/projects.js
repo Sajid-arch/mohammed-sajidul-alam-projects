@@ -160,3 +160,40 @@ const handleOnMouseMoveLs = e => {
 
 
 
+// Contact Form Validation Code Start 
+// Replace these with the actual keys you copied from your Supabase dashboard
+const SUPABASE_URL = "https://your-project-id.supabase.co";
+const SUPABASE_ANON_KEY = "your-actual-anon-public-key";
+
+// Initialize the Supabase client
+const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// Listen for form submission
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault(); // Stop page reload
+
+    // Get values from the input fields
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    try {
+        // Insert data into your 'contact_submissions' table
+        const { data, error } = await supabase
+            .from('contact_submissions')
+            .insert([
+                { name: name, email: email, message: message }
+            ]);
+
+        if (error) throw error;
+
+        alert('Message sent successfully!');
+        document.getElementById('contactForm').reset(); // Clear the form
+
+    } catch (error) {
+        console.error('Error inserting data:', error.message);
+        alert('Oops! Something went wrong while saving your message.');
+    }
+});
+
+// Contact Form Validation Code End
