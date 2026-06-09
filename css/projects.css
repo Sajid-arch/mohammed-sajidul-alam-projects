@@ -15,6 +15,7 @@
     html, body {
     overflow-x: clip;
     position: relative;
+    background: var(--text-clr);
 }
 
 body {
@@ -104,7 +105,7 @@ body {
 div.loader-container{
     top: 0;
     left: 0;
-    background: #ffffff;
+    background: var(--text-clr);
     z-index: 9999;
     transition: opacity 0.5s ease;
     pointer-events: none;
@@ -191,10 +192,11 @@ div.loader-container{
     --btn-bg-clr: rgba(255, 0, 0);
     --btn-bg-light-clr: rgba(255, 0, 0, 0.1);
     --hero-bg-clr: rgba(43, 16, 22);
+    --project-sum-bdr:rgb(254, 220, 222);
     --about-bg-clr:rgb(67, 20, 23);
     --box-shadow-clr: rgba(0, 0, 0, 0.5);
     --heading-clr:rgba(237, 228, 228, 1);
-    --gradient-text: linear-gradient(60deg,rgba(237, 35, 81),rgba(203, 199, 199));
+    --gradient-text: linear-gradient(120deg,rgba(0, 0, 0,0),rgba(255, 0, 0, 0.5));
     --placeholder-text-clr:rgba(117, 117, 118);
     --transparent:#e7e7e7;
     --description-clr:#5d6570;
@@ -202,14 +204,52 @@ div.loader-container{
     --transparent-bg-clr:rgba(0,0,0,0.05);
     --content-bg:#F2F2F2;
     --progressbar-bg:#f4f4f4;
-    --heading-section-clr:#ededed;
-    --con-det-i-bg-clr:rgba(255, 73, 74, 0.2);
     --border: #d9dde0;
+    --heading-section-clr:rgb(237, 237, 237);
+    --icon-dark-clr:rgba(20,20,20);
+    --icon-light-clr:rgba(255,255,255);
+    --bg-image: url("../Images/Background.png");
     --label-border: 2px;
     --loader-size: 78px;
     --loader-speed: 1.4s;
+    --moon:#F6F1D5;
+    --sun:#FFA500 ;
+    --theme-btn-bg:rgb(24, 24, 24);
+    transition: all ease 1s;
 }
 
+/* For Dark Mode  */
+:root.dark-mode {
+    --header-font-clr: rgba(235,235,235);
+    --text-clr: rgb(0, 0, 0);
+    --btn-bg-clr: rgba(255, 0, 0);
+    --btn-bg-light-clr: rgba(255, 0, 0, 0.25);
+    --hero-bg-clr: rgba(212, 239, 233);
+    --project-sum-bdr:rgb(56, 65, 61);
+    --about-bg-clr:rgb(188, 235, 232);
+    --box-shadow-clr: rgba(255, 255, 255, 0.5);
+    --heading-clr:rgba(18, 27, 27, 1);
+    --gradient-text: linear-gradient(120deg,rgba(0, 0, 0,0),rgba(255, 0, 0, 0.5));
+    --placeholder-text-clr:rgba(138, 138, 137);
+    --transparent:rgb(24, 24, 24);
+    --description-clr:rgb(162, 154, 143);
+    --invisible: rgba(0,0,0,0);
+    --transparent-bg-clr:rgba(0,0,0,0.05);
+    --content-bg:rgb(20, 20, 20);
+    --progressbar-bg:rgb(11, 11, 11);
+    --border: rgb(38, 34, 31);
+    --heading-section-clr:rgb(18, 18, 18);
+    --icon-dark-clr:rgba(255,255,255);
+    --icon-light-clr:rgba(255,255,255);
+    --bg-image: url("../Images/Background-Dark.png");
+    --label-border: 2px;
+    --loader-size: 78px;
+    --loader-speed: 1.4s;
+    --moon:#F6F1D5;
+    --sun:#FFA500 ;
+    --theme-btn-bg:#e7e7e7;
+    transition: all ease 1s;
+}
 
 /* Basic Style End */
 
@@ -232,6 +272,7 @@ section.heading {
     div.heading-links a{
         font-size: 1rem;
         color: var(--description-clr);
+        transition: all ease 0.5s;
     }
     div.heading-links i{
         font-size: 1rem;
@@ -353,7 +394,7 @@ section.heading {
    }
 
    section.lp div.container div.row div.col-12 div.p-img-wrapper{
-    border: 2px solid var(--border);
+    border: 2px solid var(--btn-bg-light-clr);
     background: var(--progressbar-bg);
    }
 
@@ -474,6 +515,18 @@ div.contact-form form input::placeholder, div.contact-form form textarea::placeh
 
 div.contact-form form input:focus, div.contact-form form textarea:focus{
     border: 2px solid var(--btn-bg-clr);
+}
+
+/* Override browser autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    /* Changes the text color to white to match your theme */
+    -webkit-text-fill-color: var(--header-font-clr);
+    
+    /* Makes the background transparent by delaying the browser's color change indefinitely */
+    transition: background-color 9876543210s ease-in-out 0s;
 }
 
 
