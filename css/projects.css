@@ -23,6 +23,39 @@ body {
 
 }
 
+a.wa-btn{
+    bottom: 2rem;
+    background: var(--transparent-bg-clr);
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+    position: relative;
+}
+
+a.wa-btn::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation:progress linear;
+    animation-timeline: scroll(root);
+    background: var(--btn-bg-clr);
+    transform: translateY(100%);
+}
+
+@keyframes progress{
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+a.wa-btn i{
+    color: var(--header-font-clr);
+    pointer-events: none;
+    z-index: 3;
+}
+
 
 /* The line Effect Code Start */
 

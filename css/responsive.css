@@ -23,6 +23,16 @@
     color: var(--header-font-clr);
    }
 
+       a.wa-btn{
+        right: 1rem;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    a.wa-btn i{
+    font-size: 1.5rem;
+}
+
 
 
     header div.container div.logo img{
@@ -146,6 +156,16 @@
         font-size: 1.2rem;
     }
 
+        a.wa-btn{
+        right: 2rem;
+        height: 4rem;
+        width: 4rem;
+    }
+
+    a.wa-btn i{
+    font-size: 2.5rem;
+}
+
 
 
     
@@ -212,6 +232,16 @@
     section.heading h2{
         font-size: 2.5rem;
     }
+
+        a.wa-btn{
+        right: 2rem;
+        height: 3rem;
+        width: 3rem;
+    }
+
+    a.wa-btn i{
+    font-size: 1.5rem;
+}
 
  
 
